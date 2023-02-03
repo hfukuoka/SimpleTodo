@@ -1,4 +1,4 @@
-# Firestore 練習用の Todo リスト
+# Firestore 練習用の Todo リストアプリ
 
 `yarn`
 
