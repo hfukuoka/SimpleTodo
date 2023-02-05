@@ -145,7 +145,7 @@ export const Sidebar = (props: any) => {
             onClick={() => setOpened((prev) => !prev)}
             className={classes.navbar}
             style={{ width: "50px", margin: "10px", marginTop: "20px" }}
-            size={30}
+            size={20}
             color="white"
           />
         </div>
