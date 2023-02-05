@@ -63,7 +63,7 @@ export const Sidebar = (props: any) => {
         <Navbar.Section>
           <Center className={classes.header} inline style={{ width: 270 }}>
             <Title order={1} color="white" style={{ paddingLeft: "20px" }}>
-              Todo
+              Simple Todo
             </Title>
             <Container>
               <Code className={classes.version}>v0.0.1</Code>
