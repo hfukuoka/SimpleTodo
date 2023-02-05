@@ -66,7 +66,6 @@ export const TaskItemView: React.FC<Props> = (props) => {
               <Menu.Item onClick={props.onMenuDeleteClick}>Delete</Menu.Item>
             </Menu.Dropdown>
           </Menu>
-          {/* </Flex> */}
         </Container>
       </Flex>
     </>

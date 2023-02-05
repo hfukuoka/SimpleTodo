@@ -1,20 +1,10 @@
-import {
-  Box,
-  Center,
-  ChevronIcon,
-  Code,
-  Container,
-  Navbar,
-  Title,
-  Text,
-  Flex,
-  Collapse,
-} from "@mantine/core";
+import { Box, Navbar, Text, Flex, Collapse, Group } from "@mantine/core";
 import { useContext, useState } from "react";
 import { AiOutlinePlus } from "react-icons/ai";
 import { AddProjectModal } from "./AddProjectModal";
 import { UserContext } from "./context/user";
 import { newProject } from "./data/project";
+import { RxChevronDown, RxChevronRight } from "react-icons/rx";
 
 export type TaskGroupType = {
   cx: (...args: any) => string;
@@ -41,23 +31,30 @@ export const TaskGroupBar = (props: TaskGroupType) => {
     <>
       <Navbar.Section grow>
         {props.special_tasks}
-        <div
+        <Flex
           onClick={() => setOpened((prev) => !prev)}
           className={props.cx(props.classes.link)}
+          style={{ paddingTop: "30px", paddingBottom: "30px" }}
         >
-          <ChevronIcon />
-          <Box sx={{ display: "flex", alignItems: "center" }}>
-            <Box ml="md" style={{ color: "white", margin: "10px" }}>
-              <Text fz="md">Projects</Text>
+          <Group style={{ position: "absolute" }}>
+            {opened ? <RxChevronDown /> : <RxChevronRight />}
+            <Box
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                position: "relative",
+              }}
+            >
+              <Box ml="md" style={{ color: "white", margin: "10px" }}>
+                <Text fz="md">Projects</Text>
+              </Box>
             </Box>
-          </Box>
-          <Flex
-            className="addProject"
+          </Group>
+          <AiOutlinePlus
             onClick={() => setAddProjectModal(true)}
-            style={{ marginRight: "10px" }}
-          >
-            <AiOutlinePlus size={15} style={{ margin: "0 0 0 auto " }} />
-          </Flex>
+            size={15}
+            style={{ position: "absolute", right: "25px" }}
+          />
           {user && (
             <AddProjectModal
               closer={() => setAddProjectModal(false)}
@@ -66,7 +63,7 @@ export const TaskGroupBar = (props: TaskGroupType) => {
               setOpened={() => setAddProjectModal(false)}
             />
           )}
-        </div>
+        </Flex>
         <Collapse in={opened}>{props.project_items}</Collapse>
       </Navbar.Section>
     </>
