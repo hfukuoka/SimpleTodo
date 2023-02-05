@@ -1,4 +1,6 @@
 import { getApp, getApps, initializeApp } from "firebase/app";
+import { getAuth } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
 
 export const TARGET_COLLECTION_NAME = "tasks";
 
@@ -17,3 +19,6 @@ const firebaseConfig = {
 export const firebaseApp = !getApps().length
   ? initializeApp(firebaseConfig)
   : getApp();
+
+export const firebaseAuth = getAuth();
+export const db = getFirestore(firebaseApp);

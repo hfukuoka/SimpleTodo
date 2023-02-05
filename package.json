@@ -12,13 +12,22 @@
     "@emotion/react": "^11.10.0",
     "@emotion/server": "^11.10.0",
     "@mantine/core": "5.8.3",
+    "@mantine/dates": "^5.10.3",
+    "@mantine/ds": "^5.10.3",
+    "@mantine/form": "^5.10.3",
     "@mantine/hooks": "5.8.3",
     "@mantine/next": "5.8.3",
+    "@mantine/prism": "^5.10.3",
+    "@tabler/icons": "^2.2.0",
+    "@types/styled-components": "^5.1.26",
+    "dayjs": "^1.11.7",
     "firebase": "9.16.0",
     "firebase-tools": "^11.22.0",
     "next": "12.2.4",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-icons": "^4.7.1",
+    "styled-components": "^5.3.6"
   },
   "devDependencies": {
     "@types/node": "18.6.4",
