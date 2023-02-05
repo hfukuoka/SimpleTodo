@@ -1,4 +1,12 @@
-import { Button, Divider, Flex, Modal } from "@mantine/core";
+import {
+  Button,
+  ColorInput,
+  Divider,
+  Flex,
+  Modal,
+  TextInput,
+  Title,
+} from "@mantine/core";
 import { addDoc, collection } from "firebase/firestore";
 import React, { useContext, useState } from "react";
 import styled from "styled-components";
@@ -34,31 +42,17 @@ export const AddProjectModal: React.FC<Props> = (props) => {
 
   return (
     <Modal centered opened={props.opened} onClose={props.setOpened}>
-      {/* <DivContainer> */}
-      {/* <DivOverlay onClick={props.closer}></DivOverlay> */}
-      {/* <DivMain> */}
-      <Text fz="xl" style={{ marginBottom: "20px" }}>
+      <Title fz="xl" style={{ marginBottom: "20px" }}>
         Add Project
-      </Text>
-      {/* <DivBody> */}
-      <DivName>
-        <label>Name</label>
-        <input
-          type="text"
-          value={project.name}
-          onChange={(e) => setProject({ ...project, name: e.target.value })}
-        />
-      </DivName>
-      <DivColor>
-        <label>Color</label>
-        <input
-          type="color"
-          value={project.color}
-          onChange={(e) => setProject({ ...project, color: e.target.value })}
-        />
-      </DivColor>
-      {/* </DivBody> */}
-      {/* <DivFooter> */}
+      </Title>
+      <TextInput
+        label="Name"
+        onChange={(e) => setProject({ ...project, name: e.target.value })}
+      ></TextInput>
+      <ColorInput
+        label="Color"
+        onChange={(e) => setProject({ ...project, color: e })}
+      />
       <Divider style={{ margin: "20px" }} />
       <Flex
         direction={{ base: "column", sm: "row" }}
@@ -72,57 +66,9 @@ export const AddProjectModal: React.FC<Props> = (props) => {
           Add
         </Button>
       </Flex>
-      {/* </DivFooter> */}
-      {/* </DivMain> */}
-      {/* </DivContainer> */}
     </Modal>
   );
 };
-
-const DivContainer = styled.div``;
-
-const DivOverlay = styled.div`
-  position: fixed;
-  left: 0px;
-  right: 0px;
-  top: 0px;
-  bottom: 0px;
-  z-index: 1;
-`;
-
-const DivMain = styled.div`
-  position: fixed;
-  --width: 400px;
-  --height: 252px;
-  width: var(--width);
-  //  height: var(--height);
-  top: calc(50% - var(--width) / 2);
-  left: calc(50% - var(--width) / 2);
-  z-index: 2;
-
-  border-radius: 10px;
-  box-shadow: 0 2px 8px 0 rgb(0 0 0 / 16%);
-  max-height: 100%;
-  background: white;
-`;
-
-const DivHeader = styled.div`
-  padding: 0 24px;
-  box-sizing: border-box;
-  height: 50px;
-  background: #fafafa;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  border-bottom: 1px solid #ddd;
-  padding-top: 16px;
-
-  font-size: 14px;
-  font-weight: 700;
-`;
-
-const DivBody = styled.div`
-  padding: 20px 24px;
-`;
 
 const DivName = styled.div`
   margin-bottom: 20px;
