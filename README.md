@@ -1,4 +1,6 @@
-# Firestore 練習用の Todo リストアプリ
+# Simple Todo
+
+シンプルなTodoリストアプリです
 
 `yarn`
 
