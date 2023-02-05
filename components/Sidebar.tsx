@@ -53,9 +53,8 @@ export const Sidebar = (props: any) => {
       </span>
     </div>
   ));
-  if (!user) return <></>;
   const deleteProject = (project: Project) => {
-    const collectionPath = `/users/${user.uid}/projects`;
+    const collectionPath = `/users/${user!.uid}/projects`;
     const col = collection(db, collectionPath).withConverter(TaskConverter);
     console.log(collectionPath);
     deleteDoc(doc(col, project.id)).catch((e) => console.log(e));
