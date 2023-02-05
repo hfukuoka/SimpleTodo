@@ -3,10 +3,10 @@ import styled from "styled-components";
 
 import type { Task } from "./data/task";
 
-import CalendarIcon from "./svg/calendar";
 import { Checkbox, Container, Flex, Menu } from "@mantine/core";
 import { BsThreeDots } from "react-icons/bs";
 import { useMediaQuery } from "@mantine/hooks";
+import { SlCalender } from "react-icons/sl";
 
 type Props = {
   task: Task;
@@ -34,7 +34,7 @@ export const TaskItemView: React.FC<Props> = (props) => {
           <Container size="xs">
             {task.scheduledAt && (
               <>
-                <CalendarIcon />
+                <SlCalender />
                 {`${
                   task.scheduledAt.getMonth() + 1
                 }/${task.scheduledAt.getDate()}`}

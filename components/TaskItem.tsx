@@ -7,7 +7,6 @@ import type { Task } from "./data/task";
 import type { TaskGroup } from "./Model";
 import { TaskItemView } from "./TaskItemView";
 import { TaskItemForm } from "./TaskItemForm";
-import { TaskItemPlaceholder } from "./TaskItemPlaceholder";
 import { TaskConverter } from "./data/task";
 import { getCollectionPath } from "./Model";
 
