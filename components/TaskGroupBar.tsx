@@ -34,7 +34,7 @@ export const TaskGroupBar = (props: TaskGroupType) => {
         <Flex
           onClick={() => setOpened((prev) => !prev)}
           className={props.cx(props.classes.link)}
-          style={{ paddingTop: "30px", paddingBottom: "30px" }}
+          style={{ paddingTop: "30px", paddingBottom: "0px" }}
         >
           <Group style={{ position: "absolute" }}>
             {opened ? <RxChevronDown /> : <RxChevronRight />}

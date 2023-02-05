@@ -25,14 +25,7 @@ export const AppWithContext: React.FC<Props> = () => {
         },
       }}
       navbar={
-        <MediaQuery smallerThan="sm" styles={{ display: "none" }}>
-          <div>
-            <Sidebar
-              current={focusedTaskGroup}
-              switcher={setFocusedTaskGroup}
-            />
-          </div>
-        </MediaQuery>
+        <Sidebar current={focusedTaskGroup} switcher={setFocusedTaskGroup} />
       }
     >
       {user && <Mainbar taskGroup={focusedTaskGroup} />}
