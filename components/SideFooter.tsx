@@ -1,6 +1,7 @@
 import {
   Avatar,
   Button,
+  Flex,
   Group,
   Navbar,
   PasswordInput,
@@ -99,9 +100,11 @@ export const SideFooter = (props: SideFooterPropType) => {
         ) : (
           <div>
             <Stack>
+              <Text c="white" size={15}>
+                Email
+              </Text>
               <TextInput
                 required
-                label="Email"
                 placeholder="hello@mantine.dev"
                 value={form.values.email}
                 onChange={(event) =>
@@ -109,10 +112,11 @@ export const SideFooter = (props: SideFooterPropType) => {
                 }
                 error={form.errors.email && "Invalid email"}
               />
-
+              <Text c="white" size={15}>
+                Password
+              </Text>
               <PasswordInput
                 required
-                label="Password"
                 placeholder="Your password"
                 value={form.values.password}
                 onChange={(event) =>
@@ -124,12 +128,22 @@ export const SideFooter = (props: SideFooterPropType) => {
                 }
               />
             </Stack>
-            <Button type="submit" onClick={handlerGen("SignIn")}>
-              Sign In
-            </Button>
-            <Button type="submit" onClick={handlerGen("SignUp")}>
-              Sign Up
-            </Button>
+            <Flex justify="center" align="center" direction="row" wrap="wrap">
+              <Button
+                type="submit"
+                onClick={handlerGen("SignIn")}
+                style={{ margin: "10px" }}
+              >
+                Sign In
+              </Button>
+              <Button
+                type="submit"
+                onClick={handlerGen("SignUp")}
+                style={{ margin: "10px" }}
+              >
+                Sign Up
+              </Button>
+            </Flex>
           </div>
         )}
       </Navbar.Section>
