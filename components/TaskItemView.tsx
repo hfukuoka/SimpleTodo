@@ -1,12 +1,11 @@
 import React, { useState } from "react";
-import styled from "styled-components";
 
 import type { Task } from "./data/task";
 
 import { Checkbox, Container, Flex, Menu } from "@mantine/core";
 import { BsThreeDots } from "react-icons/bs";
-import { useMediaQuery } from "@mantine/hooks";
 import { SlCalender } from "react-icons/sl";
+import { Text } from "@mantine/core";
 
 type Props = {
   task: Task;
@@ -33,12 +32,14 @@ export const TaskItemView: React.FC<Props> = (props) => {
           </Container>
           <Container size="xs">
             {task.scheduledAt && (
-              <>
+              <Flex gap="sm" direction="row" wrap="wrap" align="center">
                 <SlCalender />
-                {`${
-                  task.scheduledAt.getMonth() + 1
-                }/${task.scheduledAt.getDate()}`}
-              </>
+                <Text>
+                  {`${
+                    task.scheduledAt.getMonth() + 1
+                  } /   ${task.scheduledAt.getDate()}`}
+                </Text>
+              </Flex>
             )}
           </Container>
         </Flex>
