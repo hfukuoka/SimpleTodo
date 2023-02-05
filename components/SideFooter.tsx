@@ -93,7 +93,7 @@ export const SideFooter = (props: SideFooterPropType) => {
                 style={{ padding: "10px", fontSize: "15px" }}
                 onClick={() => firebaseAuth.signOut()}
               >
-                Log Out
+                Sign Out
               </div>
             </a>
           </>
