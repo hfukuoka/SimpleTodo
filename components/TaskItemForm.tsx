@@ -57,6 +57,7 @@ export const TaskItemForm: React.FC<Props> = (props) => {
           mx="auto"
         />
         <DatePicker
+          dropdownType="modal"
           label="task date"
           onChange={(e) =>
             setTask({
@@ -65,8 +66,6 @@ export const TaskItemForm: React.FC<Props> = (props) => {
             })
           }
           placeholder="Date input"
-          mx="auto"
-          miw={largeScreen ? "lg" : "xs"}
         />
       </Flex>
       <Flex
