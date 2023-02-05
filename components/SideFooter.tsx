@@ -73,8 +73,12 @@ export const SideFooter = (props: SideFooterPropType) => {
           <>
             <Group spacing={20} className={props.classes.link}>
               <Avatar size={20} />
-              <Text fz="md" c="white">
-                {"hayato fukuoka"}
+              <Text
+                sx={{ textOverflow: "ellipsis", overflow: "hidden" }}
+                fz="md"
+                c="white"
+              >
+                {user.email}
               </Text>
             </Group>
 
