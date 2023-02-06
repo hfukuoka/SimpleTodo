@@ -105,7 +105,7 @@ export const SideFooter = (props: SideFooterPropType) => {
               </Text>
               <TextInput
                 required
-                placeholder="hello@mantine.dev"
+                placeholder="Your email"
                 value={form.values.email}
                 onChange={(event) =>
                   form.setFieldValue("email", event.currentTarget.value)
