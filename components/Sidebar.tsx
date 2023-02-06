@@ -52,7 +52,10 @@ export const Sidebar = (props: any) => {
       className={cx(classes.link, {
         [classes.linkActive]: props.current === group,
       })}
-      onClick={() => props.switcher(group)}
+      onClick={() => {
+        props.switcher(group);
+        setOpened(matches);
+      }}
     >
       <BiTask size={20} />
       <Text fz="sm" style={{ marginLeft: "20px" }}>
@@ -88,7 +91,10 @@ export const Sidebar = (props: any) => {
                   props.current.__type === "project" &&
                   props.current.name === project.name,
               })}
-              onClick={() => props.switcher(project)}
+              onClick={() => {
+                props.switcher(project);
+                setOpened(matches);
+              }}
             >
               <BiTask size={20} color={project.color} />
               <Text fz="sm" style={{ marginLeft: "20px" }}>
