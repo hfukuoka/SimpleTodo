@@ -5,7 +5,7 @@ import { addDoc, collection, doc, setDoc } from "firebase/firestore";
 import { Task, TaskConverter } from "./data/task";
 import { FirestoreContext } from "./context/firestore";
 import { DatePicker } from "@mantine/dates";
-import { Button, Flex, TextInput } from "@mantine/core";
+import { Button, Flex, Indicator, TextInput } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
 
 type Props = {
@@ -50,7 +50,7 @@ export const TaskItemForm: React.FC<Props> = (props) => {
         <TextInput
           type="text"
           label="task name"
-          placeholder="Task name"
+          placeholder="task"
           value={task.name}
           onChange={(e) => setTask({ ...task, name: e.target.value })}
           miw={largeScreen ? "400px" : "xs"}
@@ -65,7 +65,21 @@ export const TaskItemForm: React.FC<Props> = (props) => {
               scheduledAt: e ? e : null,
             })
           }
-          placeholder="Date input"
+          placeholder="date"
+          renderDay={(date) => {
+            const day = date.toDateString();
+            const today = new Date().toDateString();
+            return (
+              <Indicator
+                size={10}
+                color="blue"
+                offset={10}
+                disabled={day !== today}
+              >
+                <div>{date.getDate()}</div>
+              </Indicator>
+            );
+          }}
         />
       </Flex>
       <Flex
