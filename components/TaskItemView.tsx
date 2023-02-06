@@ -63,7 +63,12 @@ export const TaskItemView: React.FC<Props> = (props) => {
             </Menu.Target>
             <Menu.Dropdown>
               <Menu.Item onClick={props.onMenuEditClick}>Edit</Menu.Item>
-              <Menu.Item onClick={props.onMenuDeleteClick}>Delete</Menu.Item>
+              <Menu.Item
+                onClick={props.onMenuDeleteClick}
+                style={{ color: "red" }}
+              >
+                Delete
+              </Menu.Item>
             </Menu.Dropdown>
           </Menu>
         </Container>
