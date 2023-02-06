@@ -112,8 +112,8 @@ export const Sidebar = (props: any) => {
       {opened ? (
         <>
           <Navbar width={{ sm: 350 }} p="md" className={classes.navbar}>
-            <Navbar.Section>
-              <Flex className={classes.header} style={{ width: 270 }}>
+            <Navbar.Section grow>
+              <Flex className={classes.header}>
                 <AiOutlineMenu
                   onClick={() => setOpened((prev) => !prev)}
                   className={classes.navbar}
@@ -129,13 +129,13 @@ export const Sidebar = (props: any) => {
                   Simple Todo
                 </Title>
               </Flex>
+              <TaskGroupBar
+                cx={cx}
+                classes={classes}
+                project_items={project_items}
+                special_tasks={special_tasks}
+              />
             </Navbar.Section>
-            <TaskGroupBar
-              cx={cx}
-              classes={classes}
-              project_items={project_items}
-              special_tasks={special_tasks}
-            />
             <SideFooter classes={classes} />
           </Navbar>
         </>

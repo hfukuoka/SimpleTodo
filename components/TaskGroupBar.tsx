@@ -29,7 +29,7 @@ export const TaskGroupBar = (props: TaskGroupType) => {
 
   return (
     <>
-      <Navbar.Section grow>
+      <Navbar.Section>
         {props.special_tasks}
         <Flex
           onClick={() => setOpened((prev) => !prev)}
@@ -37,14 +37,18 @@ export const TaskGroupBar = (props: TaskGroupType) => {
           style={{ paddingTop: "30px", paddingBottom: "0px" }}
         >
           <Group>
-            {opened ? <RxChevronDown /> : <RxChevronRight />}
+            {opened ? (
+              <RxChevronDown size={20} />
+            ) : (
+              <RxChevronRight size={20} />
+            )}
             <Box ml="md" style={{ color: "white", margin: "10px" }}>
               <Text fz="md">Projects</Text>
             </Box>
           </Group>
           <AiOutlinePlus
             onClick={() => setAddProjectModal(true)}
-            size={15}
+            size={20}
             style={{ position: "absolute", right: "25px" }}
           />
           {user && (
