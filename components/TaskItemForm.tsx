@@ -5,7 +5,7 @@ import { addDoc, collection, doc, setDoc } from "firebase/firestore";
 import { Task, TaskConverter } from "./data/task";
 import { FirestoreContext } from "./context/firestore";
 import { DatePicker } from "@mantine/dates";
-import { Button, Flex, Indicator, TextInput } from "@mantine/core";
+import { Button, Container, Flex, Indicator, TextInput } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
 
 type Props = {
@@ -39,14 +39,13 @@ export const TaskItemForm: React.FC<Props> = (props) => {
   const largeScreen = useMediaQuery("(min-width: 768px)");
 
   return (
-    <Flex direction="column" align="center" gap={30}>
-      <Flex
-        style={{ marginTop: "20px" }}
-        direction="row"
-        align="center"
-        gap={20}
-        maw={700}
-      >
+    <Flex
+      direction="column"
+      align="center"
+      gap={30}
+      style={{ marginBottom: "20px", marginTop: "20px" }}
+    >
+      <Flex direction="row" align="center" gap={20} maw={700}>
         <TextInput
           type="text"
           label="task name"
