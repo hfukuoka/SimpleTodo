@@ -36,18 +36,10 @@ export const TaskGroupBar = (props: TaskGroupType) => {
           className={props.cx(props.classes.link)}
           style={{ paddingTop: "30px", paddingBottom: "0px" }}
         >
-          <Group style={{ position: "absolute" }}>
+          <Group>
             {opened ? <RxChevronDown /> : <RxChevronRight />}
-            <Box
-              sx={{
-                display: "flex",
-                alignItems: "center",
-                position: "relative",
-              }}
-            >
-              <Box ml="md" style={{ color: "white", margin: "10px" }}>
-                <Text fz="md">Projects</Text>
-              </Box>
+            <Box ml="md" style={{ color: "white", margin: "10px" }}>
+              <Text fz="md">Projects</Text>
             </Box>
           </Group>
           <AiOutlinePlus
