@@ -119,28 +119,36 @@ export const Sidebar = (props: any) => {
         <>
           <Navbar width={{ sm: 350 }} p="md" className={classes.navbar}>
             <Navbar.Section grow>
-              <Flex className={classes.header}>
-                <AiOutlineMenu
-                  onClick={() => setOpened((prev) => !prev)}
-                  className={classes.navbar}
-                  style={{
-                    width: "30px",
-                    margin: "10px",
-                    marginRight: "0px",
-                  }}
-                  size={20}
-                  color="white"
-                />
-                <Title order={1} color="white" style={{ paddingLeft: "20px" }}>
-                  Simple Todo
-                </Title>
-              </Flex>
-              <TaskGroupBar
-                cx={cx}
-                classes={classes}
-                project_items={project_items}
-                special_tasks={special_tasks}
-              />
+              {user && (
+                <>
+                  <Flex className={classes.header}>
+                    <AiOutlineMenu
+                      onClick={() => setOpened((prev) => !prev)}
+                      className={classes.navbar}
+                      style={{
+                        width: "30px",
+                        margin: "10px",
+                        marginRight: "0px",
+                      }}
+                      size={20}
+                      color="white"
+                    />
+                    <Title
+                      order={1}
+                      color="white"
+                      style={{ paddingLeft: "20px" }}
+                    >
+                      Simple Todo
+                    </Title>
+                  </Flex>
+                  <TaskGroupBar
+                    cx={cx}
+                    classes={classes}
+                    project_items={project_items}
+                    special_tasks={special_tasks}
+                  />
+                </>
+              )}
             </Navbar.Section>
             <SideFooter classes={classes} />
           </Navbar>
